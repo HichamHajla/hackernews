@@ -30,7 +30,7 @@ const App = () => {
     </div>
     <div className="news">
 
-    <ol>
+    <ol className='list'>
         {data.map((element, index) => {
         return(
         <div key={index}>
@@ -44,9 +44,9 @@ const App = () => {
 
     </div> 
 
-    <footer>
+    <footer className='footer'>
     <div className='footerLinks'><a href="#Guidelines">Guidelines</a> | <a href="#FAQ">FAQ</a> | <a href="#API">comments</a> | <a href="#Security">Security</a> | <a href="#Legal">Legal</a> | <a href="#Apply">Apply to YC</a> | <a href="#contact">Contact</a></div>
-    <div className='search'></div>
+    <div className='search'>Search : <input></input></div>
     </footer>
 
     </div>
