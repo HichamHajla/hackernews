@@ -1,5 +1,8 @@
 .logo{
-  width: 25px;
+  width: 21px;
+  height: 21px;
+  border: solid 1px white;
+  margin: 1px 2px 0 2px;
 }
 
 p{
@@ -9,13 +12,13 @@ p{
   height: 25px;
   display: flex;
   flex-direction: row;
-  background-color: orangered;
+  background-color: #ff6600;
 }
 
 .title{
-  font-size: 18px;
+  font-size: 17px;
   height: 25px;
-  margin: 1px 0 0 5px;
+  margin: 1px 0 0 4px;
 }
 
 .links{
@@ -61,7 +64,7 @@ a{
 }
 
 .app {
-  background-color:beige;
+  background-color: #f6f6ef;
   width: 950px;
   margin-left: 55px;
   margin-top: 10px;
