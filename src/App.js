@@ -25,13 +25,17 @@ const App = () => {
     <div className="navbar">
     </div>
     <div className="news">
+    <ol>
     {data.map((element, index) => {
       return(
         <div key={index}>
-        <h1>{element.title}</h1>
+        
+        <News {...element}/>
+        
         </div>
       )
     })}
+    </ol>
     </div> 
     <footer>
     </footer>
