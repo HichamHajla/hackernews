@@ -29,34 +29,34 @@ const App = () => {
 
   return (
     <div className="app">
-      {loading ? (<HashLoader color="#ff6600" />) :
-      <>
-        <div className="navbar">
-        <img className="logo" src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Y_Combinator_logo.svg" alt="logo"/>
-        <h3 className='title'>Hacker News</h3>
-        <p className="links"><a href="#new">new</a> | <a href="#past">past</a> | <a href={"https://news.ycombinator.com/newcomments"}>comments</a> | <a href="#ask">ask</a> | <a href="#show">show</a> | <a href="#jobs">jobs</a> | <a href="#submit">submit</a> <a className="login" href="#login">login</a> </p>
-        </div>
-        <div className="news">
+    {loading ? (<HashLoader color="#ff6600" />) :
+    <>
+    <div className="navbar">
+    <img className="logo" src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Y_Combinator_logo.svg" alt="logo"/>
+    <h3 className='title'>Hacker News</h3>
+    <p className="links"><a href="#new">new</a> | <a href="#past">past</a> | <a href={"https://news.ycombinator.com/newcomments"}>comments</a> | <a href="#ask">ask</a> | <a href="#show">show</a> | <a href="#jobs">jobs</a> | <a href="#submit">submit</a> <a className="login" href="#login">login</a> </p>
+    </div>
+    <div className="news">
 
-        <ol className='list'>
-            {data.map((element, index) => {
-            return(
-            <div key={index}>
-            
-            <News {...element}/>
-            
-            </div>
-          )
-        })}
-        </ol>
-        <Button onClick={() => setHitsPerPage(hitsPerPage + 30)} className='button' variant="contained">NEXT</Button>
+    <ol className='list'>
+        {data.map((element, index) => {
+        return(
+        <div key={index}>
+        
+        <News {...element}/>
+        
         </div>
+      )
+    })}
+    </ol>
+    <Button onClick={() => setHitsPerPage(hitsPerPage + 30)} className='button' variant="contained">NEXT</Button>
+    </div> 
 
-        <footer className='footer'>
-        <div className='footerLinks'><a href="#Guidelines">Guidelines</a> | <a href="#FAQ">FAQ</a> | <a href="#API">comments</a> | <a href="#Security">Security</a> | <a href="#Legal">Legal</a> | <a href="#Apply">Apply to YC</a> | <a href="#contact">Contact</a></div>
-        <div className='search'>Search : <input type="text" value={query} onChange={(e)=> setQuery(e.target.value)}/></div>
-        </footer>
-      </>}
+    <footer className='footer'>
+    <div className='footerLinks'><a href="#Guidelines">Guidelines</a> | <a href="#FAQ">FAQ</a> | <a href="#API">comments</a> | <a href="#Security">Security</a> | <a href="#Legal">Legal</a> | <a href="#Apply">Apply to YC</a> | <a href="#contact">Contact</a></div>
+    <div className='search'>Search : <input type="text" value={query} onChange={(e)=> setQuery(e.target.value)}/></div>
+    </footer>
+    </>}
     </div>
   );
 }
