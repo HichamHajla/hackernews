@@ -41,12 +41,10 @@ const App = () => {
     <ol className='list'>
         {data.map((element, index) => {
         return(
-        <div key={index}>
         
-        <News {...element}/>
-        
-        </div>
-      )
+          <News key={index} toto={index} mykey={index} {...element}/>
+
+        )
     })}
     </ol>
     <Button onClick={() => setHitsPerPage(hitsPerPage + 30)} className='button' variant="contained">NEXT</Button>
