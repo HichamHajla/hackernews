@@ -45,8 +45,12 @@ p{
   text-decoration: underline;
 }
 
-.list{
-  
+.pagination{
+  padding-left: 30%;
+}
+
+.button{
+  height: 30px;
 }
 
 a{

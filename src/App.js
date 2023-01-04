@@ -1,25 +1,32 @@
-import {useEffect, useState} from 'react';
+import {useEffect, useState, CSSProperties} from 'react';
+//import Pagination from '@mui/material/Pagination';
+import Button from '@mui/material/Button';
+//import HashLoader from "react-spinners/ClipLoader";
 import './App.css';
 import axios from 'axios';
 import News from './News';
 
 const App = () => {
 
-  const [data, setData] = useState([])
-  //const [loading, setLoading] = useState(false)
+  const [query, setQuery] = useState("");
+  const [data, setData] = useState([]);
+  const [hitsPerPage, setHitsPerPage] = useState(30)
+  //const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     fetchData();
-  }, [])
+  }, [hitsPerPage, query])
 
-  const fetchData = () => {
-    axios.get(`http://hn.algolia.com/api/v1/search?query=`)
+  const fetchData = async () => {
+    await axios.get(`http://hn.algolia.com/api/v1/search?query=${query}&hitsPerPage=${hitsPerPage}`)
     .then(res => {
         setData(res.data.hits)
+        //setLoading(!loading)
         console.log(res.data.hits)
     })
     .catch(err => console.log(err))
   }
+
 
   return (
     <div className="app">
@@ -41,16 +48,19 @@ const App = () => {
       )
     })}
     </ol>
-
+    <Button onClick={() => setHitsPerPage(hitsPerPage + 30)} className='button' variant="contained">NEXT</Button>
     </div> 
 
     <footer className='footer'>
     <div className='footerLinks'><a href="#Guidelines">Guidelines</a> | <a href="#FAQ">FAQ</a> | <a href="#API">comments</a> | <a href="#Security">Security</a> | <a href="#Legal">Legal</a> | <a href="#Apply">Apply to YC</a> | <a href="#contact">Contact</a></div>
-    <div className='search'>Search : <input></input></div>
+    <div className='search'>Search : <input type="text" value={query} onChange={(e)=> setQuery(e.target.value)}/></div>
     </footer>
-
     </div>
   );
 }
 
 export default App;
+
+
+//loading ? (<HashLoader color="#ff6600" />) : 
+//<Pagination className="pagination" count={10}>
