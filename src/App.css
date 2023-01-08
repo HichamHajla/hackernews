@@ -26,11 +26,6 @@ p{
   margin: 2px 0 0 10px;
 }
 
-.url{
-  font-size: 11px;
-  color: grey;
-}
-
 .info1{
   margin-bottom: 0.7%;
 }
@@ -41,7 +36,16 @@ p{
   margin-top: 0;
 }
 
+.url{
+  font-size: 11px;
+  color: grey;
+}
+
 .url:hover{
+  text-decoration: underline;
+}
+
+.urlComments{
   text-decoration: underline;
 }
 
@@ -55,7 +59,7 @@ p{
 
 a{
   text-decoration: none;
-  color : black
+  color : black;
 }
 
 .login{
@@ -63,11 +67,18 @@ a{
 }
 
 .news{
-  border-bottom: solid 2px orangered;
+  /* border-bottom: solid 2px orangered; */
   line-height: 10px;
 }
 
 .app {
+  background-color: #f6f6ef;
+  width: 950px;
+  margin-left: 55px;
+  margin-top: 10px;
+}
+
+.Comments {
   background-color: #f6f6ef;
   width: 950px;
   margin-left: 55px;
@@ -91,6 +102,7 @@ a{
 }
 
 .footer{
+  border-top: solid 2px orangered;
   height: 100px;
 }
 
