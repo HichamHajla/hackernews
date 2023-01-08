@@ -55,7 +55,7 @@ p{
 
 a{
   text-decoration: none;
-  color : black
+  color : black;
 }
 
 .login{
@@ -63,7 +63,7 @@ a{
 }
 
 .news{
-  border-bottom: solid 2px orangered;
+  /* border-bottom: solid 2px orangered; */
   line-height: 10px;
 }
 
@@ -91,6 +91,7 @@ a{
 }
 
 .footer{
+  border-top: solid 2px orangered;
   height: 100px;
 }
 
