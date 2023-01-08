@@ -6,7 +6,9 @@ import Navbar from './components/Navbar';
 import News from './components/News';
 import Footer from './components/Footer';
 
-const App = () => {
+const App = ({ toRouterData }) => {
+
+  // console.log(toRouterData)
 
   const [query, setQuery] = useState("");
   const [data, setData] = useState([]);
@@ -18,6 +20,7 @@ const App = () => {
     .then(res => {
         setData(res.data.hits)
         setLoading(false)
+        toRouterData(res.data.hits)
         // console.log(res.data.hits)
     })
     .catch(err => console.log(err))

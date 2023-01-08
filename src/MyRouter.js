@@ -3,18 +3,18 @@ import { useState } from 'react'
 import {Routes, Route} from 'react-router-dom'
 import App from './App'
 import NotFound from './components/NotFound';
-import Article from './components/Article';
+import Comments from './components/Comments';
 
 const MyRouter = () => {
-  const [parentsData, setParentsData] = useState([]);
 
-  // console.log(parentsData);
+  const [routerData, setRouterData] = useState([]);
+  // console.log(routerData);
 
   return (
     <>
       <Routes>
-        <Route path="/" element={<App AddUsersToData={setParentsData}/>} />
-        <Route path="/:articleID" element={<Article parentsData={parentsData} />} />
+        <Route path="/" element={<App toRouterData={setRouterData}/>} />
+        <Route path="/:articleID/comments" element={<Comments fromRouterData={routerData} />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

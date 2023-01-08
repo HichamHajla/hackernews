@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const News = (props) =>{
 
   const data =  Object.values(props)
-  console.log(data)
+  // console.log(data)
 
   const hideNews = (string) => {
     const element = document.getElementById(string);
@@ -30,7 +30,7 @@ const News = (props) =>{
                   <Moment fromNow>{e.created_at}</Moment>{" "}
                   <span style={{cursor: 'pointer'}} className="url" onClick={() => hideNews(e.objectID)}>hide</span>{" "}
                   {e.num_comments}{" "}
-                  comments
+                  <Link className="url" to={`/${e.objectID}/comments`}>comments</Link>
                 </p>
               </li>
             )
