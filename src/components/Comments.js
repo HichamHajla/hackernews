@@ -11,7 +11,7 @@ import { padding } from '@mui/system';
 const Comments = ({ fromRouterData }) => {
 
   const [commentsData, setCommentsData] = useState([]);
-  const { articleID } = useParams();
+  let { articleID } = useParams();
   const articleData = fromRouterData && fromRouterData.find((e) => e.objectID === articleID);
 
   console.log(fromRouterData);
